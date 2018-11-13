@@ -9,13 +9,20 @@ var app = express();
 app.use(bodyparser.json());
 
 app.listen(8000, () => {
-    console.log('listening on port 7000');
+    console.log('listening on port 8000');
+});
+
+app.get('/', (req,res) => {
+    res.send("is it working");
 });
 
 app.get('/categories', (req,res) => {
-    var event = new Event();
-    var result = event.findcategories();
-    res.send(result);
+    Event.findcategories().then((result) => {
+        console.log(result);
+        res.status(200).send(result);
+    }, (err) => {
+        res.status(400).send(err);
+    });
 })
 
 app.delete('/user/{userId}/events/{eventId}', (req,res) => {
@@ -49,7 +56,7 @@ app.get('./events?category=:event_category&subcategory=:subcategory&min-age=:min
     event.find({
         event_category,
         event_subcategory: subcategory,
-        event_min_age=min_age,
+        event_min_age:min_age,
         event_max_age:max_age,
         event_start_date:start_date,
         event_last_date:last_date,

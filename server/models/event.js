@@ -33,7 +33,7 @@ var EventSchema = mongoose.Schema({
                 type:String
             },
             pin:{
-                type:number
+                type:Number
             }
         },
         within:{
@@ -47,7 +47,7 @@ var EventSchema = mongoose.Schema({
         type:String
     },
     event_image_url:{
-        type:URL
+        type:String
     },
     event_start_date:{
         type:Date
@@ -90,11 +90,19 @@ var EventSchema = mongoose.Schema({
 
 
 EventSchema.statics.findcategories = function(){
+    
+    return new Promise((resolve, reject) => {
     Event.find().distinct('event_category', function(err, results) {
-        if(err){
-            return error;
-        }
-        return results;
+      
+          if (err) {
+              return reject();
+          } else if (results) {
+              resolve(results);
+          } else {
+              reject();
+          }
+      })
+       
     })
 }
 
