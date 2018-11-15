@@ -7,6 +7,14 @@ var { User } = require('./models/user.js');
 var app = express();
 
 app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+
+app.all("/*", function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    next();
+});
 
 app.listen(8000, () => {
     console.log('listening on port 8000');
@@ -16,6 +24,50 @@ app.get('/', (req,res) => {
     res.send("is it working");
 });
 
+eventslist = {"object": [
+    {
+        "_id":"5bead5987c1f432c7aa11397",
+        "event_category": "sports",
+        "event_subcategory": "cricket",
+"event_location": {
+            "longitude":"7656757",
+            "latitude":"766866",
+    "address": {
+            "id":"8979",
+            "city":"Delhi",
+            "street":"maibn ygj",
+            "pin":"110009"}
+},
+
+        "event_name":"coaching",
+        "event_description":"ghkugiugkjgkjhkjhkjhkjhkjhkjhkj",
+        "event_image_url":"https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
+        "event_start_date":"23/11/2018",
+        "vent_last_date":"39/11/2018"},
+        {
+            "_id": "5bead5987cgjh32c7aa11397",
+            "event_category": "singing",
+            "event_subcategory": "classical",
+            "event_location": {
+                "longitude": "3244",
+                "latitude": "124",
+                "address": {
+                    "id": "4121",
+                    "city": "Delhi",
+                    "street": "jogg",
+                    "pin": "110007"
+                }
+            },
+
+            "event_name": "coaching",
+            "event_description": "ghkugiugkjgkjhkjhkjhkjhkjhkjhkj",
+            "event_image_url": "https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
+            "event_start_date": "23/11/2018",
+            "vent_last_date": "39/11/2018"
+        }
+]}
+categories = ['Art','Cooking','EventsFree' ,'Activity','Language','Music','Open Play','Private Lessons','Science','Swim']
+
 app.get('/categories', (req,res) => {
     Event.findcategories().then((result) => {
         console.log(result);
@@ -23,6 +75,10 @@ app.get('/categories', (req,res) => {
     }, (err) => {
         res.status(400).send(err);
     });
+})
+
+app.get('/events', (req,res) => {
+    res.status(200).send(eventslist);
 })
 
 app.delete('/user/{userId}/events/{eventId}', (req,res) => {

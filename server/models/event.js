@@ -2,11 +2,6 @@ var mongoose = require("mongoose");
 var lodash = require("lodash");
 
 var EventSchema = mongoose.Schema({
-    event_id:{
-        type:String,
-        required: true,
-        unique: true
-    },
     event_category:{
         type:String,
         required:true
