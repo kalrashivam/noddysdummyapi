@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
     res.send("is it working");
 });
 
-eventslist = {"object": [
+eventslist = {"events": [
     {
         "_id":"5bead5987c1f432c7aa11397",
         "event_category": "sports",
@@ -40,10 +40,17 @@ eventslist = {"object": [
 },
 
         "event_name":"coaching",
-        "event_description":"ghkugiugkjgkjhkjhkjhkjhkjhkjhkj",
+        "event_description":"ghkugiugkjgkjhkjhkjhkjhkj kjasdkjhdkjhaskd nalkdjskldjl fnjashkj",
         "event_image_url":"https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
         "event_start_date":"23/11/2018",
-        "vent_last_date":"39/11/2018"},
+        "event_last_date":"39/11/2018",
+        "event_min_age":"5 yrs",
+        "event_max_age":"18 yrs",
+        "event_price":"500 rs per month",
+        "event_booking": {
+            "url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test",
+            "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
+        }},
         {
             "_id": "5bead5987cgjh32c7aa11397",
             "event_category": "singing",
@@ -60,21 +67,26 @@ eventslist = {"object": [
             },
 
             "event_name": "coaching",
-            "event_description": "ghkugiugkjgkjhkjhkjhkjhkjhkjhkj",
+            "event_description": "hello there this is a trial",
             "event_image_url": "https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
             "event_start_date": "23/11/2018",
-            "vent_last_date": "39/11/2018"
+            "event_last_date": "39/11/2018",
+            "event_booking": {
+                "url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test",
+                "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
+            }
         }
 ]}
 categories = ['Art','Cooking','EventsFree' ,'Activity','Language','Music','Open Play','Private Lessons','Science','Swim']
 
 app.get('/categories', (req,res) => {
-    Event.findcategories().then((result) => {
-        console.log(result);
-        res.status(200).send(result);
-    }, (err) => {
-        res.status(400).send(err);
-    });
+    // Event.findcategories().then((result) => {
+    //     console.log(result);
+    //     res.status(200).send(result);
+    // }, (err) => {
+    //     res.status(400).send(err);
+    // });
+    res.status(200).send(categories)
 })
 
 app.get('/events', (req,res) => {
