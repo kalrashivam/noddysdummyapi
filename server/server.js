@@ -65,7 +65,7 @@ eventslist = {"events": [
                     "pin": "110007"
                 }
             },
-
+            "organizer_email":"shivamkalra2017@gmail.com",
             "event_name": "coaching",
             "event_description": "hello there this is a trial",
             "event_image_url": "https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
@@ -77,7 +77,7 @@ eventslist = {"events": [
             }
         }
 ]}
-categories = ['Art','Cooking','EventsFree' ,'Activity','Language','Music','Open Play','Private Lessons','Science','Swim']
+categories = {"categories": ['Art','Cooking','EventsFree' ,'Activity','Language','Music','Open Play','Private Lessons','Science','Swim']}
 
 app.get('/categories', (req,res) => {
     // Event.findcategories().then((result) => {
@@ -100,7 +100,11 @@ app.delete('/user/{userId}/events/{eventId}', (req,res) => {
 
 //not clear what this does
 app.post('/user/:userId/events', (req,res) => {
-    res.header(200).send("successfully done");
+    console.log(req.body);
+    working = {
+        "event":"created"
+    }
+    res.header(200).send(working);
 //res.header(404).send("error")
 })
 
