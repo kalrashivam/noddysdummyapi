@@ -93,8 +93,11 @@ app.get('/events', (req,res) => {
     res.status(200).send(eventslist);
 })
 
-app.delete('/user/{userId}/events/{eventId}', (req,res) => {
-    res.header(200).send("successfully deleted");
+app.delete('/user/:userId/events/:eventId', (req,res) => {
+    response = {
+        "event":"successfully deleted"
+    }
+    res.header(200).send(response);
     //res.header(404).send("error")
 })
 
@@ -150,3 +153,9 @@ app.put("/user/:userId/events/:eventId",(req,res) => {
     res.header(200).send("successfully done");
 //res.header(404).send("error")
 })
+
+app.get("/user/:userId/events", (req,res) => {
+   
+    
+    res.header(200).send(eventslist);
+});
