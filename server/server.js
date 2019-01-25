@@ -24,7 +24,63 @@ app.get('/', (req,res) => {
     res.send("is it working");
 });
 
-eventslist = {"events": [
+eventslist = {"events": [{"_id": "5bead5987cgjh32c77878787878787871397",
+        
+"event_category": "sports",
+"event_subcategory": "cricket",
+"event_location": {
+    "longitude":"7656757",
+    "latitude":"766866",
+"address": {
+    "id":"8979",
+    "city":"Delhi",
+    "street":"maibn ygj",
+    "pin":"110009"}
+},
+
+"event_name":"coaching",
+"event_description":"ghkugiugkjgkjhkjhkjhkjhkj kjasdkjhdkjhaskd nalkdjskldjl fnjashkj",
+"event_image_url":"https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
+"event_start_date":"2018-11-01",
+"event_last_date":"2018-11-09",
+"event_min_age":"5",
+"event_max_age":"18",
+"event_price":"500",
+"event_organizer":{
+    "name":"new wise"
+},
+"event_booking": {
+    "url": "https://www.eventshigh.com/detail/Delhi/1511b2ec0f106173d8664351d7a5af91-1st-Table-Tennis-Premier-League?src=eh-test",
+    "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
+}},{"_id": "5bead5987cgjh32c77878787878787871397",
+        
+"event_category": "sports",
+"event_subcategory": "cricket",
+"event_location": {
+    "longitude":"7656757",
+    "latitude":"766866",
+"address": {
+    "id":"8979",
+    "city":"Delhi",
+    "street":"maibn ygj",
+    "pin":"110009"}
+},
+
+"event_name":"coaching",
+"event_description":"ghkugiugkjgkjhkjhkjhkjhkj kjasdkjhdkjhaskd nalkdjskldjl fnjashkj",
+"event_image_url":"https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
+"event_start_date":"2018-11-01",
+"event_last_date":"2018-11-09",
+"event_min_age":"5",
+"event_max_age":"18",
+"event_price":"500",
+"event_organizer":{
+    "name":"new wise"
+},
+"event_booking": {
+    "url": "https://www.eventshigh.com/detail/Delhi/1511b2ec0f106173d8664351d7a5af91-1st-Table-Tennis-Premier-League?src=eh-test",
+    "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
+}},
     {"_id": "5bead5987cgjh32c77878787878787871397",
         
         "event_category": "sports",
@@ -83,7 +139,7 @@ eventslist = {"events": [
             }
         }
 ]}
-categories = {"categories": ['Art','Cooking','EventsFree' ,'Activity','Language','Music','Open Play','Private Lessons','Science','Swim']}
+categories = {"categories": [{"category":'Art',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},{"category":'Art',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},{"category":'Art',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},{"category":'Drawing',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},{"category":'Singing',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},{"category":'Dance',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"},{"category":'cooking',"image_uri":"https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}]}
 
 app.get('/categories', (req,res) => {
     // Event.findcategories().then((result) => {
