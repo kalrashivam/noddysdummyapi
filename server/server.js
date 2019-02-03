@@ -164,35 +164,39 @@ app.delete('/user/:userId/events/:eventId', (req,res) => {
     //res.header(404).send("error")
 })
 
-sendevent = {"_id": "5bead5987cgjh32c77878787878787",
-        
-"event_category": "sports",
-"event_subcategory": "cricket",
-"event_location": {
-    "longitude":"7656757",
-    "latitude":"766866",
-"address": {
-    "id":"8979",
-    "city":"Delhi",
-    "street":"maibn ygj",
-    "pin":"110009"}
-},
-
-"event_name":"coaching",
-"event_description":"ghkugiugkjgkjhkjhkjhkjhkj kjasdkjhdkjhaskd nalkdjskldjl fnjashkj",
-"event_image_url":"https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
-"event_start_date":"2018-11-01",
-"event_last_date":"2018-11-09",
-"event_min_age":"5",
-"event_max_age":"18",
-"event_price":"500",
-"event_organizer":{
-    "name":"new wise"
-},
-"event_booking": {
-    "url": "https://www.eventshigh.com/detail/Delhi/1511b2ec0f106173d8664351d7a5af91-1st-Table-Tennis-Premier-League?src=eh-test",
-    "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
-}}
+sendevent = {
+        "_id": "5bead5987cgjh32c77878787878787",
+        "event_category": "sports",
+        "event_subcategory": "Outdoor",
+        "event_location": {
+            "longitude":"7656757",
+            "latitude":"766866",
+            "address": {
+                "id":"8979",
+                "city":"Delhi",
+                "street":"maibn ygj",
+                "pin":"110009"},
+            "within":"Delhi"
+            },
+            "event_name":"coaching",
+            "event_description":"ghkugiugkjgkjhkjhkjhkjhkj kjasdkjhdkjhaskd nalkdjskldjl fnjashkj",
+            "event_image_url":"https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
+            "event_start_date":"2018-11-01",
+            "event_last_date":"2018-11-09",
+            "event_start_time":"15",
+            "event_end_time":"18",
+            "event_min_age":"5",
+            "event_max_age":"13",
+            "event_price":"500",
+            "event_organizer":{
+                "name":"new wise",
+                "url":""
+            },
+            "event_booking": {
+                "url": "https://www.eventshigh.com/detail/Delhi/1511b2ec0f106173d8664351d7a5af91-1st-Table-Tennis-Premier-League?src=eh-test",
+                "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
+            }
+    }
 
 app.get('/events/:eventId', (req,res) => {
     res.status(200).send()
