@@ -46,6 +46,8 @@ eventslist = {"events": [{"_id": "5bead5987cgjh32c77878787878787",
 "event_min_age":"5",
 "event_max_age":"18",
 "event_price":"500",
+"event_start_time":"15",
+"event_end_time":"18",
 "event_organizer":{
     "name":"new wise"
 },
@@ -103,6 +105,8 @@ eventslist = {"events": [{"_id": "5bead5987cgjh32c77878787878787",
         "event_min_age":"5",
         "event_max_age":"18",
         "event_price":"500",
+        "event_start_time":"15",
+        "event_end_time":"18",
         "event_organizer":{
             "name":"new wise"
         },
@@ -133,6 +137,8 @@ eventslist = {"events": [{"_id": "5bead5987cgjh32c77878787878787",
             "event_image_url": "https://thumbs.dreamstime.com/b/cricket-player-1426972.jpg",
             "event_start_date": "23/11/2018",
             "event_last_date": "39/11/2018",
+            "event_start_time":"15",
+            "event_end_time":"18",
             "event_booking": {
                 "url": "https://www.google.com/search?safe=strict&ei=FAcaXP7MIMy1rQGei4aIDQ&q=webbot+dialogflow+github&oq=webbot+dialogflow+github&gs_l=psy-ab.3...10896.15988..16359...0.0..0.280.4038.0j6j13......0....1..gws-wiz.......0i71j0i13i30j0i8i13i30.d7_Z7avpKfQ&safe=high",
                 "inquiry_url": "https://www.eventshigh.com/detail/Delhi/56378e1b79e6bb3ae5ebcecbab900cf0-Artistic-Planter-Workshop?src=eh-test"
@@ -198,8 +204,8 @@ sendevent = {
             }
     }
 
-app.get('/events/:eventId', (req,res) => {
-    res.status(200).send()
+app.get('/event/:eventId', (req,res) => {
+    res.status(200).send(sendevent);
 })
 
 //not clear what this does
