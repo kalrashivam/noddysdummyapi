@@ -170,6 +170,11 @@ app.delete('/user/:userId/events/:eventId', (req,res) => {
     //res.header(404).send("error")
 })
 
+
+app.post('/addevent/:eventId', (req,res) => {
+    res.status(200).send("got the image");
+})
+
 sendevent = {
         "_id": "5bead5987cgjh32c77878787878787",
         "event_category": "sports",
